@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSRI & Serotonin Syndrome</title>
+    <style>
+        body { background-color: #121212; color: #e0e0e0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: 0 auto; }
+        h1, h2, h3 { color: #ffffff; margin-top: 1.5em; }
+        a { color: #90caf9; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .alert { background: #332200; border-left: 4px solid #ffb300; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .calc-box { background: #1e1e1e; border-left: 4px solid #64b5f6; padding: 15px; margin: 15px 0; border-radius: 4px; }
+        ul { margin: 0; padding-left: 20px; } li { margin-bottom: 8px; }
+        .back-link { display: inline-block; margin-bottom: 20px; font-weight: bold; }
+        hr { border: 1px solid #333; margin: 30px 0; }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">← Back to Master Toxicology Index</a>
+    <h1>SSRI Toxicity & Serotonin Syndrome</h1>
+    
+    <div class="alert">
+        <strong>Hunter Toxicity Criteria:</strong> Serotonin syndrome features a triad of altered mental status, autonomic instability (hyperthermia, tachycardia, diaphoresis), and neuromuscular hyperactivity (clonus, hyperreflexia - usually worse in lower extremities).
+    </div>
+
+    <h2>Weight-Based Resuscitation & Antidotes</h2>
+
+    <div class="calc-box">
+        <h3>1. Benzodiazepines</h3>
+        <p>First-line therapy to control agitation, lower heart rate/blood pressure, and reduce muscle rigidity/hyperthermia.</p>
+        <ul>
+            <li><strong>Lorazepam:</strong> 0.05 - 0.1 mg/kg IV (Adult typical: 1-2 mg). Repeat every 10-20 min until sedated.</li>
+            <li><strong>Diazepam:</strong> 0.1 - 0.2 mg/kg IV (Adult typical: 5-10 mg).</li>
+        </ul>
+    </div>
+
+    <div class="calc-box">
+        <h3>2. Cyproheptadine</h3>
+        <p>A specific 5-HT2A serotonin antagonist used for moderate to severe cases unresponsive to benzodiazepines.</p>
+        <ul>
+            <li><strong>Pediatric Dose:</strong> 0.25 mg/kg/day PO divided every 6 hours. (Max 12 mg/day).</li>
+            <li><strong>Adult Dose:</strong> 12 mg PO initial loading dose. Then 2 mg PO every 2 hours until clinical response is seen. Maintenance is 8 mg every 6 hours.</li>
+            <li><strong>Note:</strong> Only available orally. Can be crushed and given down an NG tube if the patient is intubated.</li>
+        </ul>
+    </div>
+    
+    <div class="calc-box">
+        <h3>3. Supportive Care</h3>
+        <ul>
+            <li><strong>Hyperthermia:</strong> Active cooling. Avoid antipyretics (acetaminophen/ibuprofen) as the fever is caused by muscle activity, not hypothalamic set-point alteration. Paralysis/intubation may be required for temp > 41.1°C (106°F).</li>
+            <li><strong>Restraints:</strong> Avoid physical restraints if possible, as pulling against them worsens severe muscle breakdown (rhabdomyolysis) and hyperthermia.</li>
+        </ul>
+    </div>
+</body>
+</html>
