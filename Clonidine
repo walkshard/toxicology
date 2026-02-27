@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clonidine Toxicity</title>
+    <style>
+        body { background-color: #121212; color: #e0e0e0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: 0 auto; }
+        h1, h2, h3 { color: #ffffff; margin-top: 1.5em; }
+        a { color: #90caf9; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .alert { background: #2c1a1a; border-left: 4px solid #ef5350; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .calc-box { background: #1e1e1e; border-left: 4px solid #64b5f6; padding: 15px; margin: 15px 0; border-radius: 4px; }
+        ul { margin: 0; padding-left: 20px; } li { margin-bottom: 8px; }
+        .back-link { display: inline-block; margin-bottom: 20px; font-weight: bold; }
+        hr { border: 1px solid #333; margin: 30px 0; }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">← Back to Master Toxicology Index</a>
+    <h1>Clonidine Toxicity</h1>
+    
+    <div class="alert">
+        <strong>"One Pill Can Kill" Warning:</strong> Clonidine is a central alpha-2 agonist. A single 0.1 mg pill can cause severe toxicity in a toddler. It closely mimics opioid overdose.
+    </div>
+
+    <h2>Clinical Presentation</h2>
+    <ul>
+        <li><strong>Vitals:</strong> Bradycardia, hypotension, respiratory depression, hypothermia.</li>
+        <li><strong>Neuro:</strong> Profound lethargy, coma, miosis (pinpoint pupils).</li>
+        <li><strong>Note:</strong> May present with paradoxical transient hypertension initially due to peripheral alpha-1 stimulation before central alpha-2 effects dominate.</li>
+    </ul>
+    <hr>
+    <h2>Weight-Based Resuscitation & Antidotes</h2>
+
+    <div class="calc-box">
+        <h3>1. Naloxone (Narcan)</h3>
+        <p>May reverse altered mental status and respiratory depression, though results are inconsistent. High doses are often required.</p>
+        <ul>
+            <li><strong>Pediatric Dose:</strong> 0.1 mg/kg IV/IM/IN. Max single dose: 2 mg.</li>
+            <li><strong>Adult Dose:</strong> 0.4 - 2 mg IV/IM/IN. May escalate up to 10 mg.</li>
+        </ul>
+    </div>
+
+    <div class="calc-box">
+        <h3>2. Atropine</h3>
+        <p>For hemodynamically significant bradycardia.</p>
+        <ul>
+            <li><strong>Pediatric Dose:</strong> 0.02 mg/kg IV. Minimum dose 0.1 mg (to avoid paradoxical bradycardia). Max single dose: 0.5 mg.</li>
+            <li><strong>Adult Dose:</strong> 0.5 - 1 mg IV every 3-5 minutes. Max total dose: 3 mg.</li>
+        </ul>
+    </div>
+
+    <div class="calc-box">
+        <h3>3. IV Fluids & Vasopressors</h3>
+        <p>For hypotension unresponsive to fluid resuscitation.</p>
+        <ul>
+            <li><strong>Fluid Bolus:</strong> 20 mL/kg Isotonic Crystalloid.</li>
+            <li><strong>Norepinephrine or Epinephrine:</strong> Start at 0.05 - 0.1 mcg/kg/min IV. Titrate to effect.</li>
+        </ul>
+    </div>
+</body>
+</html>
