@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digoxin Toxicity</title>
+    <style>
+        body { background-color: #121212; color: #e0e0e0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: 0 auto; }
+        h1, h2, h3 { color: #ffffff; margin-top: 1.5em; }
+        a { color: #90caf9; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .alert { background: #2c1a1a; border-left: 4px solid #ef5350; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .calc-box { background: #1e1e1e; border-left: 4px solid #64b5f6; padding: 20px; margin: 15px 0; border-radius: 4px; }
+        input[type="number"] { width: 100%; max-width: 200px; padding: 8px; margin: 5px 0 15px 0; background: #2c2c2c; border: 1px solid #555; color: #fff; border-radius: 4px; display: block; }
+        button { background: #64b5f6; color: #000; border: none; padding: 10px 15px; margin-top: 5px; border-radius: 4px; cursor: pointer; font-weight: bold; }
+        button:hover { background: #42a5f5; }
+        .result-display { margin-top: 15px; padding: 10px; background: #2c2c2c; border-radius: 4px; min-height: 24px; font-weight: bold; font-size: 1.2em; color: #81c784; }
+        ul { margin: 0; padding-left: 20px; } li { margin-bottom: 8px; }
+        .back-link { display: inline-block; margin-bottom: 20px; font-weight: bold; }
+        hr { border: 1px solid #333; margin: 30px 0; }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">← Back to Master Toxicology Index</a>
+    <h1>Digoxin Toxicity</h1>
+    
+    <div class="alert">
+        <strong>Key Indicator:</strong> Hyperkalemia in the setting of an acute digoxin overdose is a marker of severe poisoning (digoxin poisons the Na/K ATPase pump). Potassium > 5.0 mEq/L with life-threatening arrhythmias is a strong indication for definitive reversal.
+    </div>
+
+    <h2>Clinical Presentation</h2>
+    <ul>
+        <li><strong>GI:</strong> Nausea, vomiting, anorexia (often earliest signs).</li>
+        <li><strong>Neuro/Visual:</strong> Confusion, weakness, "yellow-green halos" around lights (xanthopsia).</li>
+        <li><strong>ECG:</strong> "Scooped" ST segments (Salvador Dali mustache), PVCs, bradycardia, AV blocks, bidirection ventricular tachycardia.</li>
+    </ul>
+    
+    <hr>
+    
+    <div class="calc-box">
+        <h3>Digoxin Immune Fab (DigiFab) Calculator</h3>
+        <p>Calculates the number of vials needed based on steady-state serum levels.</p>
+        
+        <label>Patient Weight (kg):</label>
+        <input type="number" id="digWeight" step="0.1" placeholder="e.g., 70">
+        
+        <label>Steady-State Serum Digoxin Level (ng/mL):</label>
+        <input type="number" id="digLevel" step="0.1" placeholder="e.g., 4.5">
+        
+        <button onclick="calcDig()">Calculate Vials</button>
+        <div id="dig-result" class="result-display">Awaiting input...</div>
+        
+        <p style="font-size: 0.85em; margin-top: 15px;"><strong>Empiric Dosing (Level/Amount Unknown):</strong><br>
+        Adult Acute: 10-20 vials.<br>Adult Chronic: 3-6 vials.</p>
+    </div>
+
+    <script>
+        function calcDig() {
+            const wt = parseFloat(document.getElementById('digWeight').value);
+            const level = parseFloat(document.getElementById('digLevel').value);
+            const resDiv = document.getElementById('dig-result');
+
+            if (!wt || wt <= 0 || !level || level <= 0) {
+                resDiv.innerHTML = "<span style='color: #ef5350; font-size: 0.85em; font-weight: normal;'>Please enter valid weight and digoxin level.</span>";
+                return;
+            }
+
+            // Formula: Vials = (Serum Digoxin Concentration in ng/mL x Weight in kg) / 100
+            let vials = (level * wt) / 100;
+            
+            // Always round up to the nearest whole vial
+            vials = Math.ceil(vials);
+
+            resDiv.innerHTML = `Administer ${vials} vials of DigiFab IV.`;
+        }
+    </script>
+</body>
+</html>
