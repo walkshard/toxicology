@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcium Channel Blocker (CCB) Toxicity</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1, h2, h3 { color: #ffffff; margin-top: 1.5em; }
+        a { color: #90caf9; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .alert {
+            background: #2c1a1a;
+            border-left: 4px solid #ef5350;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .calc-box {
+            background: #1e1e1e;
+            border-left: 4px solid #64b5f6;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        ul { margin: 0; padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        .back-link { 
+            display: inline-block; 
+            margin-bottom: 20px; 
+            font-weight: bold; 
+        }
+        hr { border: 1px solid #333; margin: 30px 0; }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Back to Master Toxicology Index</a>
+
+    <h1>Calcium Channel Blocker (CCB) Toxicity</h1>
+    
+    <div class="alert">
+        <strong>"One Pill Can Kill" Warning:</strong> A single adult therapeutic dose of a CCB (especially extended-release verapamil or diltiazem) can cause profound bradycardia, hypotension, and cardiovascular collapse in a toddler.
+    </div>
+
+    <h2>Clinical Presentation</h2>
+    <ul>
+        <li><strong>Vitals:</strong> Hypotension, bradycardia (though dihydropyridines like amlodipine may initially cause reflex tachycardia).</li>
+        <li><strong>ECG:</strong> PR prolongation, AV blocks, various arrhythmias.</li>
+        <li><strong>Metabolic:</strong> Hyperglycemia (CCBs block insulin release from the pancreas), metabolic acidosis.</li>
+        <li><strong>Neuro:</strong> Altered mental status secondary to hypoperfusion.</li>
+    </ul>
+
+    <hr>
+
+    <h2>Weight-Based Resuscitation & Antidotes</h2>
+
+    <div class="calc-box">
+        <h3>1. Calcium Therapy</h3>
+        <p>Administer to overcome competitive blockade at the calcium channel. Improves inotropy more than chronotropy.</p>
+        <ul>
+            <li><strong>Calcium Gluconate 10%:</strong> 60 mg/kg (0.6 mL/kg) IV over 5-10 minutes. Max single dose: 3 g. <em>(Preferred for peripheral IV)</em></li>
+            <li><strong>Calcium Chloride 10%:</strong> 20 mg/kg (0.2 mL/kg) IV over 5-10 minutes. Max single dose: 1 g. <em>(Requires central line to avoid tissue necrosis)</em></li>
+        </ul>
+    </div>
+
+    <div class="calc-box">
+        <h3>2. Glucagon</h3>
+        <p>Stimulates adenylate cyclase independent of the beta-receptor, increasing intracellular cAMP and calcium.</p>
+        <ul>
+            <li><strong>Pediatric Dose:</strong> 50 mcg/kg (0.05 mg/kg) IV bolus over 1-2 minutes.</li>
+            <li><strong>Max Single Dose:</strong> 5 mg.</li>
+            <li><strong>Note:</strong> May cause profound vomiting. Premedicate with antiemetics and ensure airway protection.</li>
+        </ul>
+    </div>
+
+    <div class="calc-box">
+        <h3>3. High-Dose Insulin Euglycemia Therapy (HDI)</h3>
+        <p>Improves myocardial carbohydrate utilization in the severely stressed, hypotensive heart. <strong>First-line for severe toxicity.</strong></p>
+        <ul>
+            <li><strong>Regular Insulin Bolus:</strong> 1 Unit/kg IV.</li>
+            <li><strong>Regular Insulin Infusion:</strong> Start at 1 Unit/kg/hr IV. May titrate up to 10 Units/kg/hr based on hemodynamic response.</li>
+            <li><strong>Dextrose Bolus:</strong> 0.5 g/kg IV (Use D25W or D10W for young children) <em>only if</em> blood glucose is < 200 mg/dL.</li>
+            <li><strong>Dextrose Infusion:</strong> Start at 0.5 g/kg/hr IV. Titrate to maintain blood glucose between 100-250 mg/dL.</li>
+            <li><strong>Potassium:</strong> Keep K+ between 2.8 - 3.2 mEq/L. Do not supplement unless K+ drops below 2.8 mEq/L, as total body potassium is not depleted.</li>
+        </ul>
+    </div>
+
+    <div class="calc-box">
+        <h3>4. Vasopressors</h3>
+        <p>Used concurrently with HDI for persistent hypotension.</p>
+        <ul>
+            <li><strong>Norepinephrine:</strong> Start at 0.05 - 0.1 mcg/kg/min IV. Titrate to effect.</li>
+            <li><strong>Epinephrine:</strong> Start at 0.05 - 0.1 mcg/kg/min IV. Titrate to effect.</li>
+        </ul>
+    </div>
+
+    <div class="calc-box">
+        <h3>5. Lipid Emulsion Therapy (Intralipid 20%)</h3>
+        <p>Consider for refractory cardiogenic shock, especially with highly lipophilic CCBs (e.g., verapamil).</p>
+        <ul>
+            <li><strong>Bolus:</strong> 1.5 mL/kg IV over 1 minute. (May repeat up to 2 times for persistent cardiovascular collapse).</li>
+            <li><strong>Infusion:</strong> 0.25 mL/kg/min IV.</li>
+            <li><strong>Max Total Dose:</strong> 10-12 mL/kg.</li>
+        </ul>
+    </div>
+
+</body>
+</html>
