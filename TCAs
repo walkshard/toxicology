@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tricyclic Antidepressants (TCAs)</title>
+    <style>
+        body { background-color: #121212; color: #e0e0e0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: 0 auto; }
+        h1, h2, h3 { color: #ffffff; margin-top: 1.5em; }
+        a { color: #90caf9; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .alert { background: #2c1a1a; border-left: 4px solid #ef5350; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .calc-box { background: #1e1e1e; border-left: 4px solid #64b5f6; padding: 15px; margin: 15px 0; border-radius: 4px; }
+        ul { margin: 0; padding-left: 20px; } li { margin-bottom: 8px; }
+        .back-link { display: inline-block; margin-bottom: 20px; font-weight: bold; }
+        hr { border: 1px solid #333; margin: 30px 0; }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">← Back to Master Toxicology Index</a>
+    <h1>Tricyclic Antidepressants (TCAs)</h1>
+    
+    <div class="alert">
+        <strong>ECG Warning:</strong> Evaluate the QRS duration. A QRS > 100 msec is predictive of seizures. A QRS > 160 msec is predictive of ventricular arrhythmias. Look for a prominent terminal R wave in lead aVR (> 3 mm).
+    </div>
+
+    <h2>Clinical Presentation</h2>
+    <p>Causes toxicity via multiple pathways: sodium channel blockade (cardiac), alpha-1 antagonism (hypotension), anticholinergic effects, and GABA antagonism (seizures).</p>
+    <ul>
+        <li><strong>Anticholinergic Toxidrome:</strong> Tachycardia, hyperthermia, mydriasis, dry skin, urinary retention, delirium.</li>
+        <li><strong>Neuro:</strong> Seizures (often rapid onset).</li>
+        <li><strong>Cardio:</strong> Hypotension, widened QRS, ventricular tachycardia/fibrillation.</li>
+    </ul>
+    
+    <hr>
+    
+    <h2>Weight-Based Resuscitation & Antidotes</h2>
+
+    <div class="calc-box">
+        <h3>1. Sodium Bicarbonate</h3>
+        <p>The sodium load overcomes competitive sodium channel blockade, and the alkalemia decreases TCA binding to the channels. <strong>Indicated for QRS > 100 msec or arrhythmias.</strong></p>
+        <ul>
+            <li><strong>Dose:</strong> 1 - 2 mEq/kg IV push.</li>
+            <li><strong>Maintenance:</strong> Repeat boluses every 3-5 minutes until QRS narrows and blood pressure improves. Can start an infusion (3 amps in 1L D5W at 150 mL/hr) to maintain pH between 7.45 - 7.55.</li>
+        </ul>
+    </div>
+
+    <div class="calc-box">
+        <h3>2. Seizure Management</h3>
+        <p>Seizures worsen acidosis, which radically increases TCA toxicity and arrhythmias.</p>
+        <ul>
+            <li><strong>Benzodiazepines:</strong> Lorazepam 0.05 mg/kg IV or Diazepam 0.1-0.2 mg/kg IV.</li>
+            <li><em>Avoid Phenytoin</em> (it also blocks sodium channels).</li>
+        </ul>
+    </div>
+
+    <div class="calc-box">
+        <h3>3. Refractory Hypotension</h3>
+        <ul>
+            <li><strong>Vasopressors:</strong> Norepinephrine 0.05 - 0.1 mcg/kg/min (direct alpha agonist to overcome blockade).</li>
+            <li><strong>Lipid Emulsion:</strong> Consider Intralipid 20% (1.5 mL/kg bolus) for cardiovascular collapse unresponsive to bicarb and pressors.</li>
+        </ul>
+    </div>
+</body>
+</html>
