@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anticoagulant Reversal</title>
+    <style>
+        body { background-color: #121212; color: #e0e0e0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: 0 auto; }
+        h1, h2, h3 { color: #ffffff; margin-top: 1.5em; }
+        a { color: #90caf9; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .alert { background: #2c1a1a; border-left: 4px solid #ef5350; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .calc-box { background: #1e1e1e; border-left: 4px solid #64b5f6; padding: 15px; margin: 15px 0; border-radius: 4px; }
+        ul { margin: 0; padding-left: 20px; } li { margin-bottom: 8px; }
+        .back-link { display: inline-block; margin-bottom: 20px; font-weight: bold; }
+        hr { border: 1px solid #333; margin: 30px 0; }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">← Back to Master Toxicology Index</a>
+    <h1>Anticoagulant Reversal (Life-Threatening Bleed)</h1>
+    
+    <div class="alert">
+        <strong>Warning:</strong> Reversal is indicated ONLY for life-threatening or uncontrolled bleeding (e.g., intracranial hemorrhage, massive GI bleed). Reversal agents carry a high risk of subsequent thrombosis.
+    </div>
+
+    <h2>Reversal by Agent</h2>
+
+    <div class="calc-box">
+        <h3>1. Warfarin (Coumadin)</h3>
+        <ul>
+            <li><strong>Vitamin K (Phytonadione):</strong> 10 mg IV slow push (over 10-20 min). PO takes too long for active bleeding.</li>
+            <li><strong>4-Factor Prothrombin Complex Concentrate (Kcentra):</strong> 
+                <ul>
+                    <li>INR 2 - 3.9: 25 Units/kg (Max 2500 Units)</li>
+                    <li>INR 4 - 6: 35 Units/kg (Max 3500 Units)</li>
+                    <li>INR > 6: 50 Units/kg (Max 5000 Units)</li>
+                </ul>
+            </li>
+            <li><em>If Kcentra unavailable:</em> FFP (Fresh Frozen Plasma) 10-15 mL/kg.</li>
+        </ul>
+    </div>
+
+    <div class="calc-box">
+        <h3>2. Factor Xa Inhibitors (Apixaban, Rivaroxaban)</h3>
+        <ul>
+            <li><strong>Andexanet alfa (Andexxa):</strong>
+                <ul>
+                    <li><em>Low Dose:</em> 400 mg IV bolus at 30 mg/min, followed by 4 mg/min infusion for 120 mins. (Use if last dose > 8 hrs ago or unknown).</li>
+                    <li><em>High Dose:</em> 800 mg IV bolus at 30 mg/min, followed by 8 mg/min infusion for 120 mins. (Use if last dose < 8 hrs ago).</li>
+                </ul>
+            </li>
+            <li><strong>Alternative:</strong> 4-Factor PCC (Kcentra) 50 Units/kg IV (Off-label but standard of care if Andexxa unavailable/cost-prohibitive).</li>
+        </ul>
+    </div>
+
+    <div class="calc-box">
+        <h3>3. Direct Thrombin Inhibitor (Dabigatran/Pradaxa)</h3>
+        <ul>
+            <li><strong>Idarucizumab (Praxbind):</strong> 5 g IV total. Given as two separate 2.5 g doses no more than 15 minutes apart.</li>
+            <li><strong>Alternative:</strong> 4-Factor PCC 50 Units/kg or activated PCC (FEIBA) 50 Units/kg.</li>
+        </ul>
+    </div>
+
+    <div class="calc-box">
+        <h3>4. Heparin / LMWH (Enoxaparin)</h3>
+        <ul>
+            <li><strong>Protamine Sulfate:</strong>
+                <ul>
+                    <li><em>Unfractionated Heparin:</em> 1 mg per 100 units of Heparin administered in the last 2-3 hours. Max 50 mg per dose.</li>
+                    <li><em>LMWH (Enoxaparin):</em> 1 mg per 1 mg of Enoxaparin if given within 8 hours. 0.5 mg per 1 mg if given 8-12 hours ago.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
