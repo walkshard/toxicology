@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salicylate (Aspirin) Toxicity</title>
+    <style>
+        body { background-color: #121212; color: #e0e0e0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: 0 auto; }
+        h1, h2, h3 { color: #ffffff; margin-top: 1.5em; }
+        a { color: #90caf9; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .alert { background: #332200; border-left: 4px solid #ffb300; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .calc-box { background: #1e1e1e; border-left: 4px solid #64b5f6; padding: 15px; margin: 15px 0; border-radius: 4px; }
+        ul { margin: 0; padding-left: 20px; } li { margin-bottom: 8px; }
+        .back-link { display: inline-block; margin-bottom: 20px; font-weight: bold; }
+        hr { border: 1px solid #333; margin: 30px 0; }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">← Back to Master Toxicology Index</a>
+    <h1>Salicylate (Aspirin) Toxicity</h1>
+    
+    <div class="alert">
+        <strong>Intubation Warning:</strong> Intubating a salicylate patient is highly dangerous. Sedation/paralysis causes a brief pause in their compensatory hyperventilation, leading to an immediate drop in pH, driving salicylates into the brain, and causing rapid cardiac arrest. Avoid if at all possible. If required, maintain high minute ventilation immediately.
+    </div>
+
+    <h2>Clinical Presentation</h2>
+    <ul>
+        <li><strong>Classic Triad:</strong> Hyperventilation, Tinnitus, GI distress.</li>
+        <li><strong>Metabolic:</strong> Mixed primary respiratory alkalosis and primary high anion gap metabolic acidosis.</li>
+        <li><strong>Neuro:</strong> Altered mental status, lethargy, seizures, cerebral edema (indicates severe toxicity).</li>
+    </ul>
+    
+    <hr>
+    
+    <h2>Weight-Based Resuscitation & Antidotes</h2>
+
+    <div class="calc-box">
+        <h3>1. Serum and Urine Alkalinization</h3>
+        <p>Traps salicylate ions in the urine to facilitate excretion and prevents crossing into the CNS.</p>
+        <ul>
+            <li><strong>Bolus:</strong> Sodium Bicarbonate 1 - 2 mEq/kg IV push.</li>
+            <li><strong>Infusion:</strong> Add 3 ampules (150 mEq) of Sodium Bicarbonate to 1 Liter of D5W.</li>
+            <li><strong>Rate:</strong> Run at 1.5 to 2 times the maintenance fluid rate (typically 150-250 mL/hr in adults).</li>
+            <li><strong>Target:</strong> Urine pH > 7.5 and Serum pH 7.45 - 7.55.</li>
+        </ul>
+    </div>
+
+    <div class="calc-box">
+        <h3>2. Potassium Repletion</h3>
+        <p>You cannot alkalinize the urine if the patient is hypokalemic. The kidneys will resorb K+ and excrete H+ into the urine, keeping the urine acidic.</p>
+        <ul>
+            <li>Aggressively replace potassium to keep serum levels around 4.0 - 4.5 mEq/L. Can add 20-40 mEq of KCl to the bicarb infusion if renal function is adequate.</li>
+        </ul>
+    </div>
+
+    <div class="calc-box">
+        <h3>3. Hemodialysis Indications</h3>
+        <ul>
+            <li>Serum level > 100 mg/dL (acute) or > 60 mg/dL (chronic).</li>
+            <li>Altered mental status / coma / seizures.</li>
+            <li>Pulmonary edema or renal failure preventing fluid/bicarb administration.</li>
+            <li>Progressive clinical deterioration despite aggressive therapy.</li>
+        </ul>
+    </div>
+</body>
+</html>
