@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acetaminophen Toxicity</title>
+    <style>
+        body { background-color: #121212; color: #e0e0e0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: 0 auto; }
+        h1, h2, h3 { color: #ffffff; margin-top: 1.5em; }
+        a { color: #90caf9; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .alert { background: #332200; border-left: 4px solid #ffb300; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .calc-box { background: #1e1e1e; border-left: 4px solid #64b5f6; padding: 20px; margin: 15px 0; border-radius: 4px; }
+        input[type="number"] { width: 100px; padding: 8px; margin: 5px 0; background: #2c2c2c; border: 1px solid #555; color: #fff; border-radius: 4px; }
+        button { background: #64b5f6; color: #000; border: none; padding: 10px 15px; margin-top: 10px; border-radius: 4px; cursor: pointer; font-weight: bold; }
+        button:hover { background: #42a5f5; }
+        .result-display { margin-top: 15px; padding: 10px; background: #2c2c2c; border-radius: 4px; min-height: 24px; }
+        .back-link { display: inline-block; margin-bottom: 20px; font-weight: bold; }
+        hr { border: 1px solid #333; margin: 30px 0; }
+        img { max-width: 100%; height: auto; margin-top: 20px; border-radius: 4px; }
+        .safe { color: #81c784; font-weight: bold; }
+        .possible { color: #ffb300; font-weight: bold; }
+        .probable { color: #ef5350; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">← Back to Master Toxicology Index</a>
+    <h1>Acetaminophen Toxicity</h1>
+    
+    <div class="alert">
+        <strong>Warning:</strong> Often asymptomatic in the first 24 hours. The toxic metabolite (NAPQI) depletes glutathione, leading to delayed, irreversible hepatic necrosis. Applies to single acute ingestions.
+    </div>
+
+    <div class="calc-box">
+        <h3>Rumack-Matthew Nomogram Calculator</h3>
+        <p>Enter time post-ingestion (must be between 4 and 24 hours) and the acetaminophen level to determine toxicity risk.</p>
+        <label>Hours post-ingestion:</label><br>
+        <input type="number" id="apapTime" step="0.1" min="4" max="24" placeholder="e.g., 4"><br>
+        <label>Acetaminophen Level (mcg/mL):</label><br>
+        <input type="number" id="apapLevel" step="0.1" placeholder="e.g., 150"><br>
+        <button onclick="calcNomogram()">Calculate Risk</button>
+        <div id="nomogram-result" class="result-display">Awaiting input...</div>
+    </div>
+
+    <div class="calc-box">
+        <h3>N-Acetylcysteine (NAC) Dosing Calculator</h3>
+        <p>Replenishes glutathione stores. Enter patient weight in kg to calculate specific dosages.</p>
+        <label>Patient Weight (kg):</label><br>
+        <input type="number" id="ptWeight" step="0.1" placeholder="e.g., 70"><br>
+        <button onclick="calcNAC()">Calculate Doses</button>
+        <div id="nac-result" class="result-display">Awaiting weight input...</div>
+    </div>
+
+    <hr>
+    
+    <h2>Visual Rumack-Matthew Nomogram</h2>
+    <p><em>Standard reference chart for single acute ingestions.</em></p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Rumack-Matthew_nomogram.png" alt="Rumack-Matthew Nomogram Chart" />
+
+    <script>
+        function calcNomogram() {
+            const time = parseFloat(document.getElementById('apapTime').value);
+            const level = parseFloat(document.getElementById('apapLevel').value);
+            const resDiv = document.getElementById('nomogram-result');
+
+            if (!time || !level || time < 4 || time > 24) {
+                resDiv.innerHTML = "<em>Please enter a valid time between 4 and 24 hours, and a valid level.</em>";
+                return;
+            }
+
+            // Treatment line starts at 150 at 4h, halving every 4 hours.
+            const possibleLine = 150 * Math.pow(0.5, (time - 4) / 4);
+            // Probable toxicity line starts at 200 at 4h.
+            const probableLine = 200 * Math.pow(0.5, (time - 4) / 4);
+            
+            if (level >= probableLine) {
+                resDiv.innerHTML = "<span class='probable'>PROBABLY TOXIC</span> - NAC indicated immediately.";
+            } else if (level >= possibleLine) {
+                resDiv.innerHTML = "<span class='possible'>POSSIBLY TOXIC</span> - NAC indicated (Treatment Line crossed).";
+            } else {
+                resDiv.innerHTML = "<span class='safe'>LIKELY SAFE</span> - NAC not indicated based on this level for a single acute ingestion.";
+            }
+        }
+
+        function calcNAC() {
+            const wt = parseFloat(document.getElementById('ptWeight').value);
+            const resDiv = document.getElementById('nac-result');
+
+            if (!wt || wt <= 0) {
+                resDiv.innerHTML = "<em>Please enter a valid weight in kg.</em>";
+                return;
+            }
+
+            // IV 2-Bag Protocol
+            const ivBag1 = wt * 200;
+            const ivBag2 = wt * 100;
+
+            // PO Protocol
+            const poLoad = wt * 140;
+            const poMaint = wt * 70;
+
+            resDiv.innerHTML = `
+                <strong>IV Protocol (2-Bag Method)</strong><br>
+                <ul>
+                    <li><strong>Bag 1 (Loading):</strong> ${ivBag1.toFixed(0)} mg IV over 4 hours</li>
+                    <li><strong>Bag 2 (Maintenance):</strong> ${ivBag2.toFixed(0)} mg IV over 16 hours</li>
+                </ul>
+                <hr style="border-color: #444; margin: 10px 0;">
+                <strong>Oral (PO) Protocol</strong><br>
+                <ul>
+                    <li><strong>Loading Dose:</strong> ${poLoad.toFixed(0)} mg PO</li>
+                    <li><strong>Maintenance:</strong> ${poMaint.toFixed(0)} mg PO every 4 hours for 17 doses</li>
+                </ul>
+            `;
+        }
+    </script>
+</body>
+</html>
