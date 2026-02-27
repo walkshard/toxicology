@@ -3,65 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salicylate (Aspirin) Toxicity</title>
+    <title>Local Anesthetic Systemic Toxicity (LAST)</title>
     <style>
         body { background-color: #121212; color: #e0e0e0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: 0 auto; }
         h1, h2, h3 { color: #ffffff; margin-top: 1.5em; }
         a { color: #90caf9; text-decoration: none; }
         a:hover { text-decoration: underline; }
-        .alert { background: #332200; border-left: 4px solid #ffb300; padding: 15px; margin: 20px 0; border-radius: 4px; }
-        .calc-box { background: #1e1e1e; border-left: 4px solid #64b5f6; padding: 15px; margin: 15px 0; border-radius: 4px; }
+        .alert { background: #2c1a1a; border-left: 4px solid #ef5350; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .calc-box { background: #1e1e1e; border-left: 4px solid #64b5f6; padding: 20px; margin: 15px 0; border-radius: 4px; }
+        input[type="number"], select { width: 100%; max-width: 300px; padding: 8px; margin: 5px 0 15px 0; background: #2c2c2c; border: 1px solid #555; color: #fff; border-radius: 4px; display: block; }
+        button { background: #64b5f6; color: #000; border: none; padding: 10px 15px; margin-top: 5px; border-radius: 4px; cursor: pointer; font-weight: bold; }
+        button:hover { background: #42a5f5; }
+        .result-display { margin-top: 15px; padding: 10px; background: #2c2c2c; border-radius: 4px; min-height: 24px; font-weight: bold; font-size: 1.1em; color: #81c784; }
         ul { margin: 0; padding-left: 20px; } li { margin-bottom: 8px; }
         .back-link { display: inline-block; margin-bottom: 20px; font-weight: bold; }
         hr { border: 1px solid #333; margin: 30px 0; }
+        .iframe-container { position: relative; width: 100%; padding-bottom: 129%; height: 0; overflow: hidden; border-radius: 4px; margin-top: 15px; background: #fff; }
+        .iframe-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
     </style>
 </head>
 <body>
     <a href="index.html" class="back-link">← Back to Master Toxicology Index</a>
-    <h1>Salicylate (Aspirin) Toxicity</h1>
+    <h1>Local Anesthetic Systemic Toxicity (LAST)</h1>
     
     <div class="alert">
-        <strong>Intubation Warning:</strong> Intubating a salicylate patient is highly dangerous. Sedation/paralysis causes a brief pause in their compensatory hyperventilation, leading to an immediate drop in pH, driving salicylates into the brain, and causing rapid cardiac arrest. Avoid if at all possible. If required, maintain high minute ventilation immediately.
+        <strong>Warning:</strong> AVOID vasopressin, calcium channel blockers, beta blockers, and local anesthetics (like lidocaine for arrhythmias). If using epinephrine, use small doses (≤ 1 mcg/kg). Avoid propofol in patients with cardiovascular instability.
     </div>
 
-    <h2>Clinical Presentation</h2>
-    <ul>
-        <li><strong>Classic Triad:</strong> Hyperventilation, Tinnitus, GI distress.</li>
-        <li><strong>Metabolic:</strong> Mixed primary respiratory alkalosis and primary high anion gap metabolic acidosis.</li>
-        <li><strong>Neuro:</strong> Altered mental status, lethargy, seizures, cerebral edema (indicates severe toxicity).</li>
-    </ul>
-    
+    <div class="calc-box">
+        <h3>Local Anesthetic Max Dose Calculator</h3>
+        <p>Calculates the absolute maximum safe dose before toxic thresholds are reached. <br>
+        <strong style="color: #ffb300;">Note: Enter Ideal Body Weight (IBW). Maximum weight for calculation is capped at 70 kg.</strong></p>
+        
+        <label>Anesthetic Agent:</label>
+        <select id="anesAgent">
+            <option value="bupivacaine_plain">Bupivacaine (Plain) - 2.5 mg/kg</option>
+            <option value="bupivacaine_epi">Bupivacaine (with Epi) - 3.0 mg/kg</option>
+            <option value="chloroprocaine_plain">Chloroprocaine (Plain) - 11.0 mg/kg</option>
+            <option value="chloroprocaine_epi">Chloroprocaine (with Epi) - 14.0 mg/kg</option>
+            <option value="lidocaine_plain">Lidocaine (Plain) - 4.5 mg/kg</option>
+            <option value="lidocaine_epi">Lidocaine (with Epi) - 7.0 mg/kg</option>
+            <option value="mepivacaine_plain">Mepivacaine (Plain) - 4.5 mg/kg</option>
+            <option value="mepivacaine_epi">Mepivacaine (with Epi) - 7.0 mg/kg</option>
+            <option value="prilocaine_plain">Prilocaine (Plain) - 6.0 mg/kg</option>
+            <option value="procaine_plain">Procaine (Plain) - 7.0 mg/kg</option>
+            <option value="procaine_epi">Procaine (with Epi) - 8.5 mg/kg</option>
+            <option value="ropivacaine_plain">Ropivacaine (Plain) - 3.0 mg/kg</option>
+            <option value="tetracaine_plain">Tetracaine (Plain) - 3.0 mg/kg</option>
+        </select>
+
+        <label>Anesthetic Concentration (%):</label>
+        <input type="number" id="anesConc" step="0.1" placeholder="e.g., 1 for 1%, 0.5 for 0.5%">
+        
+        <label>Ideal Body Weight (kg) [Max 70 kg]:</label>
+        <input type="number" id="anesWeight" step="0.1" placeholder="e.g., 65" max="70">
+        
+        <button onclick="calcAnes()">Calculate Max Dose & Volume</button>
+        <div id="anes-result" class="result-display">Awaiting input...</div>
+    </div>
+
     <hr>
     
     <h2>Weight-Based Resuscitation & Antidotes</h2>
 
     <div class="calc-box">
-        <h3>1. Serum and Urine Alkalinization</h3>
-        <p>Traps salicylate ions in the urine to facilitate excretion and prevents crossing into the CNS.</p>
+        <h3>1. Lipid Emulsion Therapy (Intralipid 20%)</h3>
+        <p>The definitive antidote. Acts as a "lipid sink" to pull lipophilic local anesthetics out of the tissues.</p>
         <ul>
-            <li><strong>Bolus:</strong> Sodium Bicarbonate 1 - 2 mEq/kg IV push.</li>
-            <li><strong>Infusion:</strong> Add 3 ampules (150 mEq) of Sodium Bicarbonate to 1 Liter of D5W.</li>
-            <li><strong>Rate:</strong> Run at 1.5 to 2 times the maintenance fluid rate (typically 150-250 mL/hr in adults).</li>
-            <li><strong>Target:</strong> Urine pH > 7.5 and Serum pH 7.45 - 7.55.</li>
+            <li><strong>Patients &lt; 70 kg:</strong>
+                <ul>
+                    <li><strong>Bolus:</strong> 1.5 mL/kg IV over 1 minute.</li>
+                    <li><strong>Infusion:</strong> 0.25 mL/kg/min IV.</li>
+                </ul>
+            </li>
+            <li><strong>Patients &ge; 70 kg:</strong>
+                <ul>
+                    <li><strong>Bolus:</strong> 100 mL IV over 1 minute.</li>
+                    <li><strong>Infusion:</strong> 200 - 250 mL IV over 15-20 minutes.</li>
+                </ul>
+            </li>
+            <li><strong>Refractory Arrest:</strong> May repeat bolus up to 2 times and double infusion rate to 0.5 mL/kg/min. Max total dose: 12 mL/kg.</li>
         </ul>
     </div>
 
     <div class="calc-box">
-        <h3>2. Potassium Repletion</h3>
-        <p>You cannot alkalinize the urine if the patient is hypokalemic. The kidneys will resorb K+ and excrete H+ into the urine, keeping the urine acidic.</p>
+        <h3>2. Seizure Management</h3>
+        <p>Seizures increase acidosis, which worsens LAST.</p>
         <ul>
-            <li>Aggressively replace potassium to keep serum levels around 4.0 - 4.5 mEq/L. Can add 20-40 mEq of KCl to the bicarb infusion if renal function is adequate.</li>
+            <li><strong>Benzodiazepines:</strong> First-line. Midazolam 0.05-0.1 mg/kg IV or Lorazepam 0.05 mg/kg IV.</li>
         </ul>
     </div>
 
-    <div class="calc-box">
-        <h3>3. Hemodialysis Indications</h3>
-        <ul>
-            <li>Serum level > 100 mg/dL (acute) or > 60 mg/dL (chronic).</li>
-            <li>Altered mental status / coma / seizures.</li>
-            <li>Pulmonary edema or renal failure preventing fluid/bicarb administration.</li>
-            <li>Progressive clinical deterioration despite aggressive therapy.</li>
-        </ul>
+    <hr>
+
+    <h2>ALiEM Local Anesthetic Toxicity Nomograms</h2>
+    <p><em>Reference: ALiEM PV Card: Local Anesthetic Toxicity Calculations</em></p>
+    <p>View the full original PDF/source material here: <a href="https://www.aliem.com/pv-card-local-anesthetic-toxicity-calculations/" target="_blank">ALiEM PV Card</a></p>
+    <div class="iframe-container">
+        <iframe src="https://www.aliem.com/pv-card-local-anesthetic-toxicity-calculations/" title="ALiEM PV Card"></iframe>
     </div>
+
+    <script>
+        // Data matrix: [mg/kg, max mg absolute cap]
+        const anesData = {
+            'bupivacaine_plain': [2.5, 175],
+            'bupivacaine_epi': [3.0, 225],
+            'chloroprocaine_plain': [11.0, 800],
+            'chloroprocaine_epi': [14.0, 1000],
+            'lidocaine_plain': [4.5, 300],
+            'lidocaine_epi': [7.0, 500],
+            'mepivacaine_plain': [4.5, 300],
+            'mepivacaine_epi': [7.0, 500],
+            'prilocaine_plain': [6.0, 400],
+            'procaine_plain': [7.0, 500],
+            'procaine_epi': [8.5, 600],
+            'ropivacaine_plain': [3.0, 200],
+            'tetracaine_plain': [3.0, 200]
+        };
+
+        function calcAnes() {
+            let wt = parseFloat(document.getElementById('anesWeight').value);
+            const conc = parseFloat(document.getElementById('anesConc').value);
+            const agentKey = document.getElementById('anesAgent').value;
+            const resDiv = document.getElementById('anes-result');
+
+            if (!wt || wt <= 0 || !conc || conc <= 0) {
+                resDiv.innerHTML = "<span style='color: #ef5350; font-size: 0.85em; font-weight: normal;'>Please enter a valid weight and concentration.</span>";
+                return;
+            }
+
+            // Cap weight at 70 kg for calculations
+            let effectiveWt = wt > 70 ? 70 : wt;
+            
+            const [mgPerKg, maxAbsoluteMg] = anesData[agentKey];
+            
+            // Calculate max mg based on weight vs absolute cap
+            let weightBasedMg = mgPerKg * effectiveWt;
+            let maxMg = Math.min(weightBasedMg, maxAbsoluteMg);
+            
+            // Concentration conversion: 1% = 10 mg/mL
+            let mgPerMl = conc * 10;
+            let maxVolumeMl = maxMg / mgPerMl;
+
+            let weightNotice = wt > 70 ? `<br><span style="color: #ffb300; font-size: 0.8em;">*Weight automatically capped at 70 kg (Ideal Body Weight limit) for calculations.</span>` : '';
+
+            resDiv.innerHTML = `
+                Max Safe Dose: <span style="color: #fff;">${maxMg.toFixed(0)} mg</span><br>
+                Max Safe Volume: <span style="color: #fff;">${maxVolumeMl.toFixed(1)} mL</span>
+                ${weightNotice}
+            `;
+        }
+    </script>
 </body>
 </html>
