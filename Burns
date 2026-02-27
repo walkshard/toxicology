@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burn Resuscitation</title>
+    <style>
+        body { background-color: #121212; color: #e0e0e0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: 0 auto; }
+        h1, h2, h3 { color: #ffffff; margin-top: 1.5em; }
+        a { color: #90caf9; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .alert { background: #2c1a1a; border-left: 4px solid #ef5350; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .calc-box { background: #1e1e1e; border-left: 4px solid #64b5f6; padding: 20px; margin: 15px 0; border-radius: 4px; }
+        input[type="number"], select { width: 100%; max-width: 200px; padding: 8px; margin: 5px 0 15px 0; background: #2c2c2c; border: 1px solid #555; color: #fff; border-radius: 4px; display: block; }
+        button { background: #64b5f6; color: #000; border: none; padding: 10px 15px; margin-top: 5px; border-radius: 4px; cursor: pointer; font-weight: bold; }
+        button:hover { background: #42a5f5; }
+        .result-display { margin-top: 15px; padding: 10px; background: #2c2c2c; border-radius: 4px; min-height: 24px; }
+        .back-link { display: inline-block; margin-bottom: 20px; font-weight: bold; }
+        hr { border: 1px solid #333; margin: 30px 0; }
+        img { max-width: 100%; height: auto; margin-top: 10px; border-radius: 4px; background-color: #fff; padding: 10px; }
+        .highlight { color: #64b5f6; font-weight: bold; }
+        ul { margin: 0; padding-left: 20px; } li { margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">← Back to Master Toxicology Index</a>
+    <h1>Burn Resuscitation</h1>
+    
+    <div class="alert">
+        <strong>Warning:</strong> The Parkland/Modified Brooke formulas provide a starting point. Adjust IV fluid rates based on urine output (Adults: 0.5 mL/kg/hr; Pediatrics: 1 mL/kg/hr). Only count 2nd and 3rd-degree burns for TBSA calculation. First-degree (erythema only) does not count.
+    </div>
+
+    <h2>Estimating Total Body Surface Area (TBSA)</h2>
+    <p>Use the Rule of Nines for adults. For pediatric patients, the Lund-Browder chart is more accurate as children have proportionally larger heads and smaller legs.</p>
+    
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Surface_area_of_body_is_determined_by_using_the_rule_of_nines.jpg/640px-Surface_area_of_body_is_determined_by_using_the_rule_of_nines.jpg" alt="Rule of Nines Chart">
+    
+    <hr>
+
+    <div class="calc-box">
+        <h3>Fluid Resuscitation Calculator (ATLS Guidelines)</h3>
+        <p>Calculates the 24-hour Lactated Ringer's (LR) requirement from the <em>time of the burn</em> (not time of arrival).</p>
+        
+        <label>Patient Weight (kg):</label>
+        <input type="number" id="burnWeight" step="0.1" placeholder="e.g., 70">
+        
+        <label>Total Body Surface Area Burned (% TBSA):</label>
+        <input type="number" id="burnTBSA" step="0.1" placeholder="e.g., 25" max="100">
+
+        <label>Patient/Burn Type:</label>
+        <select id="burnType">
+            <option value="2">Adult Thermal (14+ yrs) - 2 mL/kg/%</option>
+            <option value="3">Pediatric Thermal (< 14 yrs) - 3 mL/kg/%</option>
+            <option value="4">Electrical Burn (All Ages) - 4 mL/kg/%</option>
+        </select>
+        
+        <button onclick="calcBurns()">Calculate Fluids</button>
+        <div id="burn-result" class="result-display">Awaiting input...</div>
+    </div>
+
+    <script>
+        function calcBurns() {
+            const wt = parseFloat(document.getElementById('burnWeight').value);
+            const tbsa = parseFloat(document.getElementById('burnTBSA').value);
+            const multiplier = parseFloat(document.getElementById('burnType').value);
+            const resDiv = document.getElementById('burn-result');
+
+            if (!wt || wt <= 0 || !tbsa || tbsa <= 0 || tbsa > 100) {
+                resDiv.innerHTML = "<em>Please enter a valid weight and a TBSA percentage between 0.1 and 100.</em>";
+                return;
+            }
+
+            // Calculate Total 24-hour volume
+            const totalVolume = multiplier * wt * tbsa;
+            
+            // Half given in first 8 hours, half over next 16 hours
+            const first8Vol = totalVolume / 2;
+            const next16Vol = totalVolume / 2;
+            
+            // Hourly rates
+            const rate8 = first8Vol / 8;
+            const rate16 = next16Vol / 16;
+
+            resDiv.innerHTML = `
+                Total 24-Hour Lactated Ringer's Required: <span class="highlight">${totalVolume.toFixed(0)} mL</span><br><br>
+                <strong>Administration Schedule:</strong><br>
+                <ul>
+                    <li><strong>First 8 Hours:</strong> Give ${first8Vol.toFixed(0)} mL total at <span class="highlight">${rate8.toFixed(0)} mL/hr</span></li>
+                    <li><strong>Next 16 Hours:</strong> Give ${next16Vol.toFixed(0)} mL total at <span class="highlight">${rate16.toFixed(0)} mL/hr</span></li>
+                </ul>
+                <p style="font-size: 0.85em; color: #bbb;">*Note: The 8-hour clock starts at the <em>time of the burn injury</em>. Subtract any fluids already given pre-hospital from the first 8-hour total.</p>
+                ${multiplier === 3 ? `<p style="font-size: 0.85em; color: #ffb300;">*Pediatric Alert: Remember to add maintenance fluids (D5LR or similar) to this resuscitation rate for young children to prevent hypoglycemia.</p>` : ''}
+                ${multiplier === 4 ? `<p style="font-size: 0.85em; color: #ffb300;">*Electrical Alert: Target higher urine output (1-1.5 mL/kg/hr) until urine clears of myoglobin pigment to prevent renal failure.</p>` : ''}
+            `;
+        }
+    </script>
+</body>
+</html>
