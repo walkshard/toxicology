@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toxicology & Antidote Master Index</title>
+    <style>
+        body { 
+            background-color: #121212; 
+            color: #e0e0e0; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            line-height: 1.6; 
+            padding: 20px; 
+            max-width: 800px; 
+            margin: 0 auto; 
+        }
+        h1, h2 { 
+            color: #ffffff; 
+            text-align: center; 
+            margin-bottom: 0.5em; 
+        }
+        h2 {
+            font-size: 1.2em;
+            color: #90caf9;
+            margin-bottom: 2em;
+        }
+        a { 
+            color: #ffffff; 
+            text-decoration: none; 
+        }
+        .menu-grid { 
+            display: grid; 
+            grid-template-columns: 1fr; 
+            gap: 15px; 
+            margin-top: 30px; 
+        }
+        .menu-item { 
+            background: #1e1e1e; 
+            border: 1px solid #333; 
+            padding: 20px; 
+            border-radius: 8px; 
+            text-align: center; 
+            font-size: 1.2em; 
+            font-weight: bold; 
+            transition: background 0.2s, border-color 0.2s; 
+        }
+        .menu-item:hover { 
+            background: #2c2c2c; 
+            border-color: #64b5f6; 
+            color: #64b5f6; 
+        }
+        .disclaimer { 
+            font-size: 0.8em; 
+            color: #757575; 
+            text-align: center; 
+            margin-top: 50px; 
+            padding-top: 20px;
+            border-top: 1px solid #333;
+        }
+        
+        @media (min-width: 600px) {
+            .menu-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Toxicology & Antidotes</h1>
+    <h2>"One Pill Can Kill" & Weight-Based Resuscitation</h2>
+    
+    <div class="menu-grid">
+        <a href="acetaminophen.html"><div class="menu-item">Acetaminophen (Tylenol)</div></a>
+        <a href="anticoagulation.html"><div class="menu-item">Anticoagulation Reversal</div></a>
+        <a href="beta_blockers.html"><div class="menu-item">Beta Blockers</div></a>
+        <a href="burns.html"><div class="menu-item">Burn Resuscitation</div></a>
+        <a href="ccb.html"><div class="menu-item">Calcium Channel Blockers (CCB)</div></a>
+        <a href="clonidine.html"><div class="menu-item">Clonidine</div></a>
+        <a href="digoxin.html"><div class="menu-item">Digoxin</div></a>
+        <a href="last.html"><div class="menu-item">Local Anesthetic Toxicity (LAST)</div></a>
+        <a href="organophosphates.html"><div class="menu-item">Organophosphates & Cholinergics</div></a>
+        <a href="ACE_ARB.html"><div class="menu-item">Other BP Meds (ACEi/ARB)</div></a>
+        <a href="salicylates.html"><div class="menu-item">Salicylates (Aspirin)</div></a>
+        <a href="ssri.html"><div class="menu-item">SSRIs & Serotonin Syndrome</div></a>
+        <a href="sulfonylureas.html"><div class="menu-item">Sulfonylureas</div></a>
+        <a href="tcas.html"><div class="menu-item">Tricyclic Antidepressants (TCAs)</div></a>
+    </div>
+
+    <div class="disclaimer">
+        <p><strong>Disclaimer:</strong> This guide is for educational purposes only. Always verify weight-based dosing and consult local institutional guidelines or Poison Control (1-800-222-1222 in the US) prior to administration.</p>
+    </div>
+</body>
+</html>
