@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beta Blocker Toxicity</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1, h2, h3 { color: #ffffff; margin-top: 1.5em; }
+        a { color: #90caf9; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .alert {
+            background: #2c1a1a;
+            border-left: 4px solid #ef5350;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .calc-box {
+            background: #1e1e1e;
+            border-left: 4px solid #64b5f6;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        ul { margin: 0; padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        .back-link { 
+            display: inline-block; 
+            margin-bottom: 20px; 
+            font-weight: bold; 
+        }
+        hr { border: 1px solid #333; margin: 30px 0; }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Back to Master Toxicology Index</a>
+
+    <h1>Beta Blocker Toxicity</h1>
+    
+    <div class="alert">
+        <strong>"One Pill Can Kill" Warning:</strong> A single adult pill (especially propranolol or sotalol) can be lethal to a toddler. Propranolol is highly lipophilic, crossing the blood-brain barrier rapidly to cause seizures and abrupt cardiovascular collapse.
+    </div>
+
+    <h2>Clinical Presentation</h2>
+    <ul>
+        <li><strong>Vitals:</strong> Hypotension, bradycardia.</li>
+        <li><strong>ECG:</strong> PR prolongation, AV blocks, widened QRS (propranolol due to sodium channel blockade), QT prolongation (sotalol due to potassium channel blockade).</li>
+        <li><strong>Metabolic:</strong> Hypoglycemia (especially in pediatric patients, as beta blockers inhibit glycogenolysis).</li>
+        <li><strong>Neuro:</strong> Altered mental status, coma, seizures (classic for propranolol).</li>
+    </ul>
+
+    <hr>
+
+    <h2>Weight-Based Resuscitation & Antidotes</h2>
+
+    <div class="calc-box">
+        <h3>1. Glucagon</h3>
+        <p>First-line specific antidote. Bypasses the beta-receptor to stimulate adenylate cyclase, increasing intracellular cAMP.</p>
+        <ul>
+            <li><strong>Pediatric Dose:</strong> 50 mcg/kg (0.05 mg/kg) IV bolus over 1-2 minutes.</li>
+            <li><strong>Infusion:</strong> If response is positive, start infusion at the "response dose" per hour (e.g., if 2 mg worked, run at 2 mg/hr).</li>
+            <li><strong>Max Single Dose:</strong> 5 mg.</li>
+            <li><strong>Note:</strong> Frequently causes vomiting. Premedicate with antiemetics. Depletes hepatic glycogen, so effect may wane over time.</li>
+        </ul>
+    </div>
+
+    <div class="calc-box">
+        <h3>2. High-Dose Insulin Euglycemia Therapy (HDI)</h3>
+        <p>Improves myocardial carbohydrate utilization. Highly effective for profound cardiogenic shock failing glucagon/fluids.</p>
+        <ul>
+            <li><strong>Regular Insulin Bolus:</strong> 1 Unit/kg IV.</li>
+            <li><strong>Regular Insulin Infusion:</strong> Start at 1 Unit/kg/hr IV. Titrate up to 10 Units/kg/hr.</li>
+            <li><strong>Dextrose Bolus:</strong> 0.5 g/kg IV (Use D25W or D10W for young children) <em>only if</em> blood glucose is < 200 mg/dL.</li>
+            <li><strong>Dextrose Infusion:</strong> Start at 0.5 g/kg/hr IV. Maintain BG 100-250 mg/dL.</li>
+        </ul>
+    </div>
+
+    <div class="calc-box">
+        <h3>3. Vasopressors</h3>
+        <p>Direct alpha/beta agonists to overcome competitive blockade.</p>
+        <ul>
+            <li><strong>Epinephrine:</strong> Start at 0.05 - 0.1 mcg/kg/min IV. Often preferred for beta-blocker toxicity due to its direct beta-agonist properties.</li>
+            <li><strong>Norepinephrine:</strong> Start at 0.05 - 0.1 mcg/kg/min IV.</li>
+        </ul>
+    </div>
+
+    <div class="calc-box">
+        <h3>4. Sodium Bicarbonate (For QRS Widening)</h3>
+        <p>Indicated if QRS is > 100-120 ms (seen with propranolol's sodium channel blockade).</p>
+        <ul>
+            <li><strong>Dose:</strong> 1 - 2 mEq/kg IV push. Repeat as needed to narrow QRS.</li>
+        </ul>
+    </div>
+
+    <div class="calc-box">
+        <h3>5. Lipid Emulsion Therapy (Intralipid 20%)</h3>
+        <p>Consider for refractory shock involving lipophilic beta blockers (Propranolol, Carvedilol, Nebivolol).</p>
+        <ul>
+            <li><strong>Bolus:</strong> 1.5 mL/kg IV over 1 minute.</li>
+            <li><strong>Infusion:</strong> 0.25 mL/kg/min IV.</li>
+        </ul>
+    </div>
+
+</body>
+</html>
