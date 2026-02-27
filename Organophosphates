@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organophosphates & Cholinergics</title>
+    <style>
+        body { background-color: #121212; color: #e0e0e0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: 0 auto; }
+        h1, h2, h3 { color: #ffffff; margin-top: 1.5em; }
+        a { color: #90caf9; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .alert { background: #332200; border-left: 4px solid #ffb300; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .calc-box { background: #1e1e1e; border-left: 4px solid #64b5f6; padding: 15px; margin: 15px 0; border-radius: 4px; }
+        ul { margin: 0; padding-left: 20px; } li { margin-bottom: 8px; }
+        .back-link { display: inline-block; margin-bottom: 20px; font-weight: bold; }
+        hr { border: 1px solid #333; margin: 30px 0; }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">← Back to Master Toxicology Index</a>
+    <h1>Organophosphates & Cholinergics</h1>
+    
+    <div class="alert">
+        <strong>Decontamination Warning:</strong> Healthcare providers must wear appropriate PPE to avoid secondary toxicity. Remove all patient clothing and wash skin with soap and water aggressively.
+    </div>
+
+    <h2>Clinical Presentation</h2>
+    <p>Irreversible inhibition of acetylcholinesterase leads to an overabundance of acetylcholine at muscarinic and nicotinic receptors.</p>
+    <ul>
+        <li><strong>Muscarinic (DUMBELS):</strong> Diarrhea, Urination, Miosis (pinpoint pupils), Bronchorrhea, Emesis, Lacrimation, Salivation.</li>
+        <li><strong>The Killer B's:</strong> Bronchorrhea, Bronchospasm, Bradycardia (primary cause of death).</li>
+        <li><strong>Nicotinic (MTWTF):</strong> Muscle fasciculations, Tachycardia (can override bradycardia), Weakness, Tremors, Fasciculations (leading to respiratory failure).</li>
+    </ul>
+    
+    <hr>
+    
+    <h2>Weight-Based Resuscitation & Antidotes</h2>
+
+    <div class="calc-box">
+        <h3>1. Atropine (For Muscarinic Effects)</h3>
+        <p>Competitively blocks acetylcholine at muscarinic receptors. Has no effect on muscle weakness (nicotinic). <strong>Goal: Drying of respiratory secretions.</strong> Heart rate and pupil size are NOT the endpoints of resuscitation.</p>
+        <ul>
+            <li><strong>Starting Dose:</strong> Adult: 1 - 3 mg IV. Pediatric: 0.02 - 0.05 mg/kg IV.</li>
+            <li><strong>Titration (Doubling Dose):</strong> If no effect in 3-5 minutes, double the dose (e.g., 2 mg -> 4 mg -> 8 mg). Massive doses (hundreds of mg) may be required.</li>
+            <li><strong>Infusion:</strong> Once secretions dry, start an infusion at 10-20% of the total dose required to achieve drying, given per hour.</li>
+        </ul>
+    </div>
+
+    <div class="calc-box">
+        <h3>2. Pralidoxime / 2-PAM (For Nicotinic Effects)</h3>
+        <p>Breaks the bond between the organophosphate and acetylcholinesterase, reactivating the enzyme. Must be given before the bond "ages" (becomes permanent).</p>
+        <ul>
+            <li><strong>Adult Dose:</strong> 30 mg/kg (usually 1 - 2 grams) IV over 15-30 minutes, followed by an infusion of 8 mg/kg/hr.</li>
+            <li><strong>Pediatric Dose:</strong> 20 - 50 mg/kg IV over 15-30 minutes, followed by an infusion of 10 - 20 mg/kg/hr.</li>
+        </ul>
+    </div>
+
+    <div class="calc-box">
+        <h3>3. Seizure Management</h3>
+        <ul>
+            <li><strong>Benzodiazepines:</strong> Midazolam, Lorazepam, or Diazepam standard weight-based dosing. Crucial for both treating and preventing CNS damage.</li>
+        </ul>
+    </div>
+</body>
+</html>
